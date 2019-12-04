@@ -1,12 +1,12 @@
-let count = 0
-for (let j = 359282; j <= 820401; j++) {
+let count = 0;
+for (let j = 359282; j <= 820401; j += 1) {
     const str = j.toString();
     let neverDecrease = false;
     let hasSameDigit = false;
 
-    for (var i = 0; i < str.length - 1; i++) {
-        const first = str[i]
-        const second = str[i + 1]
+    for (let i = 0; i < str.length - 1; i += 1) {
+        const first = str[i];
+        const second = str[i + 1];
         if (first === second) {
             hasSameDigit = true;
         }
@@ -18,8 +18,8 @@ for (let j = 359282; j <= 820401; j++) {
         }
     }
     if (hasSameDigit && neverDecrease) {
-        count++;
+        count += 1;
     }
 }
 
-console.log(count)
+console.log(count);
