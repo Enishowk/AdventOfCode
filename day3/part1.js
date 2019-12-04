@@ -1,5 +1,4 @@
-const fs = require("fs");
-const content = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
+const content = require("fs").readFileSync(`${__dirname}/input.txt`, "utf8");
 
 const wires = []
 content.split(/\r?\n/).forEach(line => {
@@ -19,30 +18,22 @@ wires.forEach(wire => {
         const numb = instruction.match(/\d+$/g)[0];
         const direction = instruction[0];
 
-        if (direction === "R") {
-            for (i = numb; i > 0; i--) {
+        for (i = numb; i > 0; i--) {
+            if (direction === "R") {
                 x++;
-                coord.add(`${x},${y}`);
             }
-        }
-        if (direction === "L") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "L") {
                 x--;
-                coord.add(`${x},${y}`);
             }
-        }
-        if (direction === "D") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "D") {
                 y--;
-                coord.add(`${x},${y}`);
             }
-        }
-        if (direction === "U") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "U") {
                 y++;
-                coord.add(`${x},${y}`);
             }
+            coord.add(`${x},${y}`);
         }
+
     });
     coords.push(coord)
 })
