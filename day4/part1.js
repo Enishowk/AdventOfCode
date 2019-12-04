@@ -1,0 +1,25 @@
+let count = 0
+for (let j = 359282; j <= 820401; j++) {
+    const str = j.toString();
+    let neverDecrease = false;
+    let hasSameDigit = false;
+
+    for (var i = 0; i < str.length - 1; i++) {
+        const first = str[i]
+        const second = str[i + 1]
+        if (first === second) {
+            hasSameDigit = true;
+        }
+        if (+first <= +second) {
+            neverDecrease = true;
+        } else {
+            neverDecrease = false;
+            break;
+        }
+    }
+    if (hasSameDigit && neverDecrease) {
+        count++;
+    }
+}
+
+console.log(count)
