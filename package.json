@@ -1,5 +1,5 @@
 {
-    "name": "adventofcode-2019",
+    "name": "adventofcode",
     "version": "1.0.0",
     "description": "[Website](https://adventofcode.com/)",
     "main": "index.js",
@@ -11,14 +11,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Enishowk/AdventOfCode-2019.git"
+        "url": "git+https://github.com/Enishowk/AdventOfCode.git"
     },
     "author": "Enishowk",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Enishowk/AdventOfCode-2019/issues"
+        "url": "https://github.com/Enishowk/AdventOfCode/issues"
     },
-    "homepage": "https://github.com/Enishowk/AdventOfCode-2019#readme",
+    "homepage": "https://github.com/Enishowk/AdventOfCode#readme",
     "devDependencies": {
         "eslint": "^6.1.0",
         "eslint-config-airbnb": "^18.0.1",
