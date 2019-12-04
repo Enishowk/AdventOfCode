@@ -1,5 +1,4 @@
-const fs = require("fs");
-const content = fs.readFileSync(`${__dirname}/input.txt`, "utf8");
+const content = require("fs").readFileSync(`${__dirname}/input.txt`, "utf8");
 
 const wires = []
 content.split(/\r?\n/).forEach(line => {
@@ -19,41 +18,26 @@ wires.forEach(wire => {
     const steps = {};
     let countSteps = 0;
 
-    wire.forEach((instruction, index) => {
+    wire.forEach(instruction => {
         const numb = instruction.match(/\d+$/g)[0];
         const direction = instruction[0];
 
-        if (direction === "R") {
-            for (i = numb; i > 0; i--) {
+        for (i = numb; i > 0; i--) {
+            if (direction === "R") {
                 x++;
-                countSteps++;
-                coord.add(`${x},${y}`);
-                steps[`${x},${y}`] = countSteps;
             }
-        }
-        if (direction === "L") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "L") {
                 x--;
-                countSteps++;
-                coord.add(`${x},${y}`);
-                steps[`${x},${y}`] = countSteps;
             }
-        }
-        if (direction === "D") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "D") {
                 y--;
-                countSteps++;
-                coord.add(`${x},${y}`);
-                steps[`${x},${y}`] = countSteps;
             }
-        }
-        if (direction === "U") {
-            for (i = numb; i > 0; i--) {
+            if (direction === "U") {
                 y++;
-                countSteps++;
-                coord.add(`${x},${y}`);
-                steps[`${x},${y}`] = countSteps;
             }
+            coord.add(`${x},${y}`);
+            countSteps++;
+            steps[`${x},${y}`] = countSteps;
         }
     });
     coords.push(coord)
