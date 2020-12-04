@@ -45,10 +45,11 @@ function isValidFields(fields) {
 
 let count = 0;
 const passportsWithAllFields = inputs.filter(hasRequiredFields);
-for (let i = 0; i < passportsWithAllFields.length; i += 1) {
-    const fields = passportsWithAllFields[i].split(' ');
+passportsWithAllFields.forEach(passport => {
+    const fields = passport.split(' ');
     if (fields.every(isValidFields)) {
         count += 1;
     }
-}
+});
+
 console.log(count);
