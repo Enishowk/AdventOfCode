@@ -5,7 +5,7 @@ const inputs = require('fs')
 let tree = 0;
 let x = 0;
 for (let y = 1; y < inputs.length; y += 1) {
-    x = x + 3 >= inputs[y].length ? 3 - (inputs[y].length - x) : x + 3;
+    x = (x + 3) % inputs[y].length;
     if (inputs[y][x] === '#') {
         tree += 1;
     }
