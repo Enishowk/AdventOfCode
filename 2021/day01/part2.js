@@ -5,12 +5,12 @@ const inputs = require('fs')
 
 let count = 0;
 for (let i = 0; i < inputs.length; i += 1) {
-    const [firstValue, secondValue, thirdValue, forthValue] = inputs.slice(
+    const [firstValue, secondValue, thirdValue, fourthValue] = inputs.slice(
         i,
         i + 4
     );
     const firstSliding = firstValue + secondValue + thirdValue;
-    const secondSliding = secondValue + thirdValue + forthValue;
+    const secondSliding = secondValue + thirdValue + fourthValue;
 
     if (secondSliding > firstSliding) {
         count += 1;
