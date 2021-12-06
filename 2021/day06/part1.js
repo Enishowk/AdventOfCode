@@ -15,7 +15,7 @@ const populate = (arr) => {
 };
 
 let count = 1;
-while (count <= 256) {
+while (count <= 80) {
     populate(inputs);
     count += 1;
 }
