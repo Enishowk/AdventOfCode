@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/Enishowk/AdventOfCode#readme",
   "devDependencies": {
-    "mocha": "^9.1.3"
+    "mocha": "^10.8.2"
   }
 }
